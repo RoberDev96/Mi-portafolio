@@ -1,0 +1,15 @@
+---
+import { imageConfig } from "astro:assets";
+import BaseHead from "../componentes/baseHead.astro";
+const { title, description, image = '/imagen/perfil.jpg' } = Astro.props;
+ 
+---  
+
+<html lang="en">
+  <head>
+  <BaseHead title={title} description={description} image={image}/>
+  </head> 
+  <body>
+    <slot />
+  </body>
+</html>
