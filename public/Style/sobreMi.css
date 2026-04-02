@@ -1,0 +1,75 @@
+/* Estilos base (móvil) */
+.main {
+  min-height: 100vh;
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    padding: 0 2rem;
+  }
+}
+
+/* Grid de tecnologías responsivo */
+.tarject {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .tarject {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+/* Móviles grandes */
+@media (min-width: 481px) and (max-width: 640px) {
+  .tarject {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Tablets pequeñas */
+@media (min-width: 641px) and (max-width: 768px) {
+  .tarject {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Tablets grandes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tarject {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .tarject {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1536px) {
+  .tarject {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Ajustes para texto en móvil */
+@media (max-width: 640px) {
+  .text-x {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}

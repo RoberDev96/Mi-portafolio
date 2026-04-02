@@ -20,12 +20,10 @@ const nav: NavItem[] = [
     bg-[#030712]/80 backdrop-blur-md z-50 h-16 md:h-auto"
   >
     
-    <!-- Logo o marca (opcional) -->
     <div class="text-white font-bold text-xl md:hidden">
       Portfolio
     </div>
 
-    <!-- Menú desktop - visible en pantallas grandes -->
     <ol class="hidden md:flex justify-center gap-6 lg:gap-10 m-4 md:m-6">
       {
         nav.map((item) => (
@@ -42,7 +40,6 @@ const nav: NavItem[] = [
       }
     </ol>
 
-    <!-- Iconos de redes sociales - siempre visibles en desktop -->
     <div class="hidden md:flex gap-5 items-center">
       <a
         href="https://github.com/RoberDev96"
