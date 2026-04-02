@@ -3,21 +3,25 @@
 
 
 
-<div class="w-200 h-70 flex justify-between">
- <div
-  class="w-64 h-full bg-cover bg-center bg-no-repeat rounded-4xl overflow-hidden shadow-[3px_3px_0_#1E40AF]"
-  style={`background-image: url('/imagen/perfil.jpg')`}
->
-</div>
-  <div class="w-125 h-full flex flex-col gap-2 p-6 bg-[#111828]
-  rounded-4xl shadow-[3px_3px_0_#1E40AF]">
-    <h1 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-4xl font-bold">Sobre Mi</h1>
-    <p class="text-white text-x">
+<div class="flex flex-col md:flex-row justify-between items-stretch gap-6 w-full max-w-6xl mx-auto px-4">
+  <!-- Imagen -->
+  <div class="w-full md:w-64 h-64 md:h-auto bg-cover bg-center bg-no-repeat rounded-4xl overflow-hidden shadow-[3px_3px_0_#1E40AF]"
+    style={`background-image: url('/imagen/perfil.jpg')`}>
+  </div>
+
+  <!-- Tarjeta de texto "Sobre Mi" -->
+  <div class="w-full md:w-125 lg:w-150 flex flex-col gap-2 p-6 bg-[#111828] rounded-4xl shadow-[3px_3px_0_#1E40AF]">
+    <h1 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl font-bold">
+      Sobre Mi
+    </h1>
+    <p class="text-white text-sm sm:text-base">
       Mi nombre es Roberto, soy Desarrollador de Software y actualmente me
       desempeño como Web Developer, con un enfoque en el Frontend y la
       experiencia del usuario. Trabajo con tecnologías como React, Node.js,
       Astro, JavaScript, TypeScript, Bootstrap, Tailwind CSS, entre otras.
     </p>
-    <a class="mt-3 text-[#2563EB]" href="/sobreMi/sobreMi ">Ver más sobre mí</a>
+    <a class="mt-3 text-[#2563EB] hover:text-[#3B82F6] transition-colors" href="/sobreMi/sobreMi">
+      Ver más sobre mí →
+    </a>
   </div>
 </div>

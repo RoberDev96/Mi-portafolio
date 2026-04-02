@@ -15,7 +15,8 @@ import Layout from "../layout/Layout.astro";
         class="w-137.5 flex flex-col flex-wrap text-center items-center gap-3"
       >
         <h1
-          class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-6xl font-bold"
+          class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-5xl font-bold
+          md:text-6xl lg:w-150"
         >
           Hola! soy Roberto
         </h1>
@@ -23,14 +24,15 @@ import Layout from "../layout/Layout.astro";
         <div class="h-20 flex justify-center items-center">
           <div class="typewriter-container">
             <h2
-              class="text-[#3B82F6] text-3xl text-center font-bold typewriter-text"
+              class="text-[#3B82F6] text-2xl text-center font-bold typewriter-text
+              md:text-3xl"
             >
               Desarrollador Frontend...
             </h2>
           </div>
         </div>
 
-        <p class="text-white text-xl font-bold max-w-2xl">
+        <p class="text-white px-8 text-x font-bold max-w-2xl md:text-xl md:p-0">
           Explora mis proyectos, conoce un poco más sobre mí y, si deseas
           ponerte en contacto, ¡estoy a solo un mensaje de distancia!
         </p>
@@ -52,7 +54,7 @@ import Layout from "../layout/Layout.astro";
 
     <section>
       <SocialFav />
-      <Swiper />
+      <!-- <Swiper /> -->
     </section>
 
     <section>
