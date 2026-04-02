@@ -4,83 +4,91 @@ import MyPerfil from "../components/shared/myPerfil.astro";
 import SocialFav from "../components/shared/socialFav.astro";
 import Swiper from "../components/shared/swiper.astro";
 import Layout from "../layout/Layout.astro";
-
-
 ---
 
 <Layout>
-  <div class="flex flex-col mt-44 gap-10 items-center w-full px-10 md:px-0">
-    <section class="flex flex-col justify-center align-middle">
-      <div
-        class="w-137.5 flex flex-col flex-wrap text-center items-center gap-3"
-      >
-        <h1
-          class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-5xl font-bold
-          md:text-6xl lg:w-150"
-        >
+  <div class="flex flex-col mt-20 md:mt-32 lg:mt-44 gap-6 md:gap-8 lg:gap-10 items-center w-full px-4 md:px-6 lg:px-8">
+    
+    <!-- Sección principal Hero -->
+    <section class="flex flex-col justify-center align-middle w-full">
+      <div class="w-full max-w-4xl mx-auto flex flex-col flex-wrap text-center items-center gap-3 md:gap-4 px-4">
+        <h1 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
           Hola! soy Roberto
         </h1>
 
-        <div class="h-20 flex justify-center items-center">
-          <div class="typewriter-container">
-            <h2
-              class="text-[#3B82F6] text-2xl text-center font-bold typewriter-text
-              md:text-3xl"
-            >
+        <div class="h-16 sm:h-20 flex justify-center items-center w-full">
+          <div class="typewriter-container w-full max-w-md mx-auto">
+            <h2 class="text-[#3B82F6] text-base sm:text-xl md:text-2xl lg:text-3xl text-center font-bold typewriter-text">
               Desarrollador Frontend...
             </h2>
           </div>
         </div>
 
-        <p class="text-white px-8 text-x font-bold max-w-2xl md:text-xl md:p-0">
+        <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold max-w-2xl px-4">
           Explora mis proyectos, conoce un poco más sobre mí y, si deseas
           ponerte en contacto, ¡estoy a solo un mensaje de distancia!
         </p>
       </div>
 
-      <aside class="flex justify-center mt-8 items-center">
+      <aside class="flex justify-center mt-6 md:mt-8 items-center">
         <a href="../../public/Roberto-Romero.pdf" download>
-          <button
-            class="bg-[#2563EB] w-52 h-11 rounded-4xl shadow-[3px_3px_0_#1E40AF]
+          <button class="bg-[#2563EB] w-40 sm:w-44 md:w-48 lg:w-52 h-10 sm:h-11 rounded-4xl shadow-[3px_3px_0_#1E40AF]
             hover:bg-[#1D4ED8] hover:scale-105 hover:shadow-[1px_1px_0_#1E40AF]
             hover:translate-x-0.5 hover:translate-y-0.5
-            transition-all duration-200 text-white font-bold cursor-pointer"
-          >
+            transition-all duration-200 text-white font-bold cursor-pointer text-sm sm:text-base">
             Curriculum
           </button>
         </a>
       </aside>
     </section>
 
-    <section>
-      <SocialFav />
-      <!-- <Swiper /> -->
+    <!-- Sección de SocialFav - centrada en móvil -->
+    <section class="w-full">
+      <div class="social-container w-full flex justify-center items-center">
+        <div class="w-full max-w-md mx-auto">
+          <SocialFav />
+        </div>
+      </div>
     </section>
 
-    <section>
-    <MyPerfil />
+    <!-- Sección de Swiper (comentada) -->
+    <!-- <section class="w-full">
+      <div class="swiper-container w-full">
+        <Swiper />
+      </div>
+    </section> -->
 
-      
+    <!-- Sección MyPerfil - centrada y responsiva -->
+    <section class="w-full">
+      <div class="myperfil-container w-full flex justify-center items-center">
+        <div class="w-full max-w-4xl mx-auto">
+          <MyPerfil />
+        </div>
+      </div>
     </section>
 
-    <footer class="h-36 w-full">
+    <!-- Footer -->
+    <footer class="h-auto md:h-36 w-full">
       <FooterMain />
     </footer>
   </div>
 </Layout>
 
 <style>
+  /* Estilos base */
   .typewriter-container {
     display: inline-block;
+    width: 100%;
   }
 
   .typewriter-text {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid #3b82f6;
+    border-right: 2px solid #3b82f6;
     display: inline-block;
     animation: typewriter 10s steps(30, end) infinite;
     width: 0;
+    max-width: 100%;
   }
 
   @keyframes typewriter {
@@ -108,6 +116,89 @@ import Layout from "../layout/Layout.astro";
     }
     50% {
       border-color: #3b82f6;
+    }
+  }
+
+  /* Contenedores centrados */
+  .social-container,
+  .myperfil-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Ajustes responsivos para el typewriter */
+  @media (max-width: 640px) {
+    .typewriter-text {
+      white-space: normal;
+      word-break: keep-all;
+      animation: typewriter-mobile 8s steps(20, end) infinite;
+      font-size: 1rem;
+    }
+    
+    @keyframes typewriter-mobile {
+      0% {
+        width: 0;
+      }
+      20% {
+        width: 100%;
+      }
+      50% {
+        width: 100%;
+      }
+      70% {
+        width: 0;
+      }
+      100% {
+        width: 0;
+      }
+    }
+  }
+
+  /* Tablet adjustments */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .typewriter-text {
+      animation: typewriter-tablet 10s steps(25, end) infinite;
+    }
+    
+    @keyframes typewriter-tablet {
+      0% {
+        width: 0;
+      }
+      20% {
+        width: 100%;
+      }
+      50% {
+        width: 100%;
+      }
+      70% {
+        width: 0;
+      }
+      100% {
+        width: 0;
+      }
+    }
+  }
+
+  /* Ajustes específicos para MyPerfil en móvil */
+  @media (max-width: 768px) {
+    .myperfil-container > div {
+      width: 100%;
+      padding: 0 1rem;
+    }
+  }
+
+  /* Ajustes para pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .typewriter-text {
+      font-size: 0.875rem;
+      white-space: normal;
+      word-break: keep-all;
+    }
+    
+    h1 {
+      font-size: 1.75rem;
     }
   }
 </style>
