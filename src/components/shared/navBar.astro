@@ -1,0 +1,64 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface NavItem {
+  href: string;
+  text: string;
+}
+
+const nav: NavItem[] = [
+  { href: "/", text: "Inicio" },
+  { href: "/proyectos/proyectos", text: "Proyectos" },
+  { href: "/sobreMi/sobreMi", text: "Sobre Mi" },
+];
+---
+
+<section>
+  <nav
+    class="fixed top-0 left-0 flex justify-end items-center border-b border-white/10 w-full px-6 
+    bg-[#030712]/80 backdrop-blur-md z-50"
+  >
+    <ol class="flex justify-center gap-10 m-6">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              class="text-white font-bold text-[16px] font-serif hover:text-[#3B82F6] 
+              scale-105 duration-300 inline-block transition-colors"
+              href={item.href}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="flex gap-5 items-center">
+      <a
+        href="https://github.com/RoberDev96"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:bg-[#3B82F6] transition-opacity flex items-center justify-center w-9 h-9"
+      >
+        <Icon name="gitHub" size={30} class="text-white" />
+      </a>
+      <a
+        href="https://web.telegram.org/k/#@LinkinPark_RRD"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[#3B82F6] opacity-80 transition-opacity flex items-center justify-center w-9 h-9"
+      >
+        <Icon name="telegram" size={30} class="text-white" />
+      </a>
+      <a
+        href="https://t.me/LinkinPark_RRD"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:bg-[#3B82F6] opacity-80 transition-opacity flex items-center justify-center w-9 h-9"
+      >
+        <Icon name="linkedin" size={30} class="text-white" />
+      </a>
+    </div>
+  </nav>npm
+</section>

@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+
+const tecnologic = [
+  { name: "typeScript", size: 30, texto: "TypeScript" },
+  { name: "javaScript", size: 30, texto: "JavaScript" },
+  { name: "react", size: 30, texto: "React" },
+  { name: "html", size: 30, texto: "HTML" },
+  { name: "css", size: 30, texto: "CSS" },
+  { name: "astro", size: 30, texto: "Astro" },
+  { name: "tailwind", size: 30, texto: "Tailwindcss" },
+  { name: "git", size: 30, texto: "Git" },
+  { name: "gitHub", size: 30, texto: "GitHub" },
+  { name: "redux", size: 30, texto: "Redux" },
+  { name: "zustand", size: 30, texto: "Zustand" },
+];
+
+// ✅ Cambiado: 2 copias para que funcione con -50%
+const slides = [...tecnologic, ...tecnologic, ...tecnologic ];
+---
+
+<div class="w-full overflow-hidden py-8">
+  <div class="flex gap-6 animate-scroll" style="width: fit-content;">
+    {slides.map((item) => (
+      <div class="flex-none">
+        <div class="flex flex-col items-center gap-3 p-4 
+          backdrop-blur-sm hover:bg-white/10 
+          transition-all duration-300 rounded-lg">
+          <Icon name={item.name} size={item.size} class="text-blue-500" />
+          <h3 class="text-white text-xs font-semibold whitespace-nowrap">
+            {item.texto}
+          </h3>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+  
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+</style>

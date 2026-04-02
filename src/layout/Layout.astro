@@ -1,15 +1,20 @@
 ---
 import { imageConfig } from "astro:assets";
-import BaseHead from "../componentes/baseHead.astro";
+import BaseHead from "../components/baseHead.astro";
+import NavBar from "../components/shared/navBar.astro";
 const { title, description, image = '/imagen/perfil.jpg' } = Astro.props;
  
 ---  
 
 <html lang="en">
   <head>
-  <BaseHead title={title} description={description} image={image}/>
+  <BaseHead title='Roberto Romero Díaz' description={description} image={image}/>
   </head> 
-  <body>
-    <slot />
+  
+  <body class="bg-[#030712]">
+    <NavBar />
+    <main class=" flex justify-center items-center align-middle w-full">
+      <slot />
+    </main>
   </body>
 </html>

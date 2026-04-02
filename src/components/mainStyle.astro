@@ -1,0 +1,23 @@
+---
+
+interface Props {
+        text:string 
+}
+
+const { text } = Astro.props
+---
+
+
+
+<div
+      class="relative text-white py-24 overflow-hidden w-full
+        bg-[linear-gradient(#3B82F633_1px,transparent_1px),linear-gradient(90deg,#3B82F633_1px,transparent_1px)]
+        bg-size-[25px_25px] bg-[#0b122b] text-center
+        mask-[linear-gradient(to_bottom,black,black,transparent)]"
+    >
+      <h1
+        class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-6xl font-bold"
+      >
+        {text}
+      </h1>
+    </div>

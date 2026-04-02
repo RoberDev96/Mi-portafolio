@@ -1,0 +1,168 @@
+---
+import Layout from "../../layout/Layout.astro";
+import Tarject from "../../components/servicios/tarject.astro";
+import { Icon } from "astro-icon/components";
+import FooterMain from "../../components/shared/footerMain.astro";
+import MainStyle from "../../components/mainStyle.astro";
+
+const textFront = `Desarrollo de interfaces modernas, rápidas y accesibles que
+ ofrecen una experiencia de usuario intuitiva y atractiva.`;
+
+const textDesarrollo = `Construcción de sitios web modernos, adaptados a dispositivos móviles, optimizados y con tecnologías actuales.`;
+
+const tecnologic = [
+  { name: "typeScript", size: 50, texto: "TypeScript" },
+  { name: "javaScript", size: 50, texto: "JavaScript" },
+  { name: "react", size: 50, texto: "React" },
+  { name: "html", size: 50, texto: "HTML" },
+  { name: "css", size: 50, texto: "CSS" },
+  { name: "astro", size: 50, texto: "Astro" },
+  { name: "tailwind", size: 50, texto: "Tailwindcss" },
+  { name: "git", size: 50, texto: "Git" },
+  { name: "gitHub", size: 50, texto: "GitHub" },
+  { name: "redux", size: 50, texto: "Redux" },
+  { name: "zustand", size: 50, texto: "Zustand" },
+];
+---
+
+<Layout>
+  <section class="mt-10 flex flex-col w-full items-center">
+    <MainStyle text={'Sobre Mi'}/>
+    <main>
+      <div class="w-250 h-90 flex justify-between gap-20">
+        <div
+          class="w-96 h-full bg-cover bg-center bg-no-repeat rounded-4xl overflow-hidden shadow-[3px_3px_0_#1E40AF]"
+          style="background-image: url('../../../public/imagen/perfil.jpg')"
+        >
+        </div>
+        <div class="w-175 h-full flex flex-col gap-2">
+          <h1
+            class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-4xl font-bold"
+          >
+            Mi nombre es Roberto
+          </h1>
+          <p class="text-white text-x">
+            Soy un desarrollador de software con un enfoque en el <span
+              class="text-[#3b82f6]"
+            >
+              desarrollo front-end
+            </span> y la <span class="text-[#3b82f6]"
+              >experiencia del usuario</span
+            >, integrando interfaces, lógica de negocio y APIs según las
+            necesidades de cada proyecto. Trabajo con tecnologías como React,
+            Node.js, Astro, JavaScript, TypeScript, Tailwind CSS y herramientas
+            de diseño como Figma, entre otras. Mi interés por la <span
+              class="text-[#3b82f6]">tecnología</span
+            >
+            surgió desde muy pequeño. En la clase de informática tuve mi primer contacto
+            con la <span class="text-[#3b82f6]">programación</span> y, movido por
+            la curiosidad, continué aprendiendo por mi cuenta hasta descubrir que
+            esto era lo que quería hacer <span class="text-[#3b82f6]">
+              profesionalmente.</span
+            >
+            Hoy mantengo ese mismo <span class="text-[#3b82f6]">impulso:</span> siempre
+            estoy <span class="text-[#3b82f6]">comprometido con mejorar</span>
+            mis habilidades, adaptarme a los nuevos avances tecnológicos y crecer
+            tanto a nivel profesional como personal. Me motiva crear <span
+              class="text-[#3b82f6]">soluciones</span
+            > funcionales, visuales y bien pensadas que generen una experiencia real
+            para los <span class="text-[#3b82f6]">usuarios.</span>
+          </p>
+        </div>
+      </div>
+      <section class="mt-15">
+        <!-- <Example client:load/> -->
+        <div class="w-full flex flex-col gap-10">
+          <div class="flex justify-around w-full items-center">
+            <div
+              class="h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+            >
+            </div>
+            <h2
+              class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-4xl"
+            >
+              Servicios
+            </h2>
+          </div>
+          <div class="flex justify-center gap-20">
+            <Tarject name={"Frontend"} text={textFront} icon={"frontend"} />
+            <Tarject
+              name={"Desarrollo Web Responsivo"}
+              text={textDesarrollo}
+              icon={"responsive"}
+            />
+          </div>
+        </div>
+      </section>
+      <section class="mt-15">
+        <div class="flex justify-around w-full items-center">
+          <h2
+            class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-4xl"
+          >
+            Tecnologías
+          </h2>
+          <div
+            class="h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+          >
+          </div>
+        </div>
+        <div class="w-full py-8">
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8"
+          >
+            {
+              tecnologic.map((item) => (
+                <div>
+                  <div
+                    class="flex flex-col items-center gap-4 p-9 w-62.5 h-37.5 bg-[#111828]
+  rounded-4xl shadow-[3px_3px_0_#1E40AF]"
+                  >
+                    <Icon
+                      name={item.name}
+                      size={item.size}
+                      class="text-blue-500"
+                    />
+                    <h3 class="text-white text-xs font-semibold whitespace-nowrap">
+                      {item.texto}
+                    </h3>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+      <section class="h-72 w-full">
+        <main
+          class="w-full h-full flex justify-around gap-2 bg-[#1B1560]
+  rounded-4xl shadow-[3px_3px_0_#1E40AF]"
+        >
+          <div class="w-150 flex flex-col gap-6 mt-6">
+            <h2 class="text-white font-bold text-3xl">¡Visita mi GitHub!</h2>
+            <p class="text-white text-2xl">
+              Hola! te invito a mi perfil de GitHub para que puedas explorar mis
+              proyectos y contribuciones
+            </p>
+            <a href="https://github.com/RoberDev96">
+              <button
+                class="font-bold border rounded-3xl h-11 w-28 bg-amber-50 cursor-pointer
+                hover:scale-105"
+                >Ir a GitHub</button>
+            </a>
+          </div>
+          <div class="w-90 h-full overflow-hidden">
+          <a href="https://github.com/RoberDev96">
+            
+            <img
+              src="../../../public/imagen/github.png"
+              class="w-200 h-full hover:scale-105"
+              alt="mi-Github"
+            />
+          </a>
+          </div>
+        </main>
+      </section>
+    </main>
+    <FooterMain/>
+  </section>
+</Layout>
