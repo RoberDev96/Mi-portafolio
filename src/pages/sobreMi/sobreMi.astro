@@ -24,6 +24,26 @@ const tecnologic = [
   { name: "redux", size: 50, texto: "Redux" },
   { name: "zustand", size: 50, texto: "Zustand" },
 ];
+
+const experiencias = [
+  {
+    fecha: "2023 - Actualidad",
+    cargo: "Programador de Software",
+    empresa: "Universidad de Matanzas - Departamento de Administración de Red",
+    descripcion: `Desarrollo y mantenimiento de aplicaciones internas para la gestión universitaria.
+    Implementación de nuevas funcionalidades y optimización de sistemas existentes.`,
+    tecnologias: ["Astro", "React", "Tailwind", "TypeScript"]
+  },
+  {
+    fecha: "2020 - 2022",
+    cargo: "Desarrollador Web",
+    empresa: "Copextel SA",
+    descripcion: `-Diseñar, implementar y mantener las funcionalidades del software. Participar
+en el ciclo completo de desarrollo: desde la especificación hasta la
+codificación, pruebas y producción.`,
+    tecnologias: ["JavaScript", "HTML/CSS", "Vue"]
+  },
+ ];
 ---
 
 <Layout>
@@ -85,6 +105,46 @@ const tecnologic = [
         </div>
       </section>
 
+     <!-- Sección de Experiencia -->
+<section class="mt-20 md:mt-28">
+  <div class="w-full flex flex-col gap-6 md:gap-10">
+    <!-- Título de Experiencia -->
+    <div class="flex flex-col-reverse md:flex-row justify-around w-full items-center gap-4 md:gap-0">
+      <div class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+      </div>
+      <h2 class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl">
+        Experiencia
+      </h2>
+      <div class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+      </div>
+    </div>
+    
+    <!-- Grid de experiencias -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-10">
+      {experiencias.map((exp) => (
+        <div class="bg-linear-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-2xl border border-[#3b82f6]/20 hover:border-[#3b82f6]/50 transition-all hover:scale-[1.02]">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-[#3b82f6] text-sm font-mono">{exp.fecha}</p>
+              <h3 class="text-white text-xl font-bold mt-1">{exp.cargo}</h3>
+              <p class="text-gray-400 text-md">{exp.empresa}</p>
+            </div>
+            <Icon name="astro" size={32} class="text-[#3b82f6]/50" />
+          </div>
+          <p class="text-gray-300 mt-4">{exp.descripcion}</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {exp.tecnologias.map(tech => (
+              <span class="text-xs bg-[#3b82f6]/20 text-[#3b82f6] px-2 py-1 rounded-full">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       <!-- Sección de Tecnologías -->
       <section class="mt-10 md:mt-15">
         <div class="flex flex-col md:flex-row justify-around w-full items-center gap-4 md:gap-0">
@@ -140,7 +200,6 @@ const tecnologic = [
       </section>
     </main>
     
-    <FooterMain />
   </section>
 </Layout>
 

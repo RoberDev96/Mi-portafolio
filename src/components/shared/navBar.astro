@@ -9,9 +9,12 @@ interface NavItem {
 
 const nav: NavItem[] = [
   { href: "/", text: "Inicio" },
-  { href: "/proyectos/proyectos", text: "Proyectos" },
-  { href: "/sobreMi/sobreMi", text: "Sobre Mi" },
+  { href: "#Sobre-mi", text: "Sobre Mi" },
+  { href: "#Proyectos", text: "Proyectos" },
 ];
+
+const currentPath = Astro.url.pathname;
+
 ---
 
 <section>
@@ -23,22 +26,41 @@ const nav: NavItem[] = [
     <div class="text-white font-bold text-xl md:hidden">
       Portfolio
     </div>
-
-    <ol class="hidden md:flex justify-center gap-6 lg:gap-10 m-4 md:m-6">
-      {
-        nav.map((item) => (
-          <li>
-            <a
-              class="text-white font-bold text-[16px] font-serif hover:text-[#3B82F6] 
-              scale-105 duration-300 inline-block transition-colors"
-              href={item.href}
-            >
-              {item.text}
-            </a>
-          </li>
-        ))
+<ol class="hidden md:flex justify-center gap-6 lg:gap-10 m-4 md:m-6">
+  {
+    nav.map((item) => {
+      // Determinar si el enlace está activo
+      let isActive = false;
+      
+      if (item.href.startsWith('#')) {
+        // Es un enlace interno (hash)
+        const currentHash = Astro.url.hash;
+        isActive = currentHash === item.href;
+      } else {
+        // Es una ruta normal
+        isActive = currentPath === item.href;
       }
-    </ol>
+      
+      return (
+        <li class="relative">  
+          <a
+            class="text-white font-bold text-[16px] font-serif hover:text-[#3B82F6] 
+            scale-105 duration-300 inline-block transition-colors"
+            href={item.href}
+          >
+            {item.text}
+          </a>
+          {isActive && (
+            <div 
+              transition:name="menu-line"
+              class="absolute -bottom-1 left-0 right-0 border-blue-500 border-b-2"
+            />
+          )}
+        </li>
+      );
+    })
+  }
+</ol>
 
     <div class="hidden md:flex gap-5 items-center">
       <a
@@ -53,7 +75,7 @@ const nav: NavItem[] = [
         href="https://web.telegram.org/k/#@LinkinPark_RRD"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-[#3B82F6] opacity-80 transition-opacity flex items-center justify-center w-9 h-9 rounded-full"
+        class="hover:bg-[#3B82F6] opacity-80 transition-opacity flex items-center justify-center w-9 h-9 rounded-full"
       >
         <Icon name="telegram" size={30} class="text-white" />
       </a>
@@ -66,6 +88,7 @@ const nav: NavItem[] = [
         <Icon name="linkedin" size={30} class="text-white" />
       </a>
     </div>
+
 
     <!-- Botón menú hamburguesa - solo visible en móvil -->
     <div class="md:hidden flex items-center gap-3">
