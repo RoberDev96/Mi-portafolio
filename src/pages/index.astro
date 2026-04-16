@@ -2,7 +2,6 @@
 import FooterMain from "../components/shared/footerMain.astro";
 import NavBar from "../components/shared/navBar.astro";
 import SocialFav from "../components/shared/socialFav.astro";
-// import Swiper from "../components/shared/swiper.astro";
 import Layout from "../layout/Layout.astro";
 import Proyectos from "./proyectos/proyectos.astro";
 import SobreMi from "./sobreMi/sobreMi.astro";
@@ -27,6 +26,7 @@ import SobreMi from "./sobreMi/sobreMi.astro";
           <div class="typewriter-container w-full max-w-md mx-auto">
             <h2
               class="text-[#3B82F6] text-base sm:text-xl md:text-2xl lg:text-3xl text-center font-bold typewriter-text"
+              aria-label="Desarrollador Frontend"
             >
               Desarrollador Frontend...
             </h2>
@@ -42,21 +42,23 @@ import SobreMi from "./sobreMi/sobreMi.astro";
       </div>
 
       <aside class="flex justify-center mt-6 md:mt-8 items-center">
-        <a href="../../public/Roberto-Romero.pdf" download>
-          <button
-            class="bg-[#2563EB] w-40 sm:w-44 md:w-48 lg:w-52 h-10 sm:h-11 rounded-4xl shadow-[3px_3px_0_#1E40AF]
-            hover:bg-[#1D4ED8] hover:scale-105 hover:shadow-[1px_1px_0_#1E40AF]
-            hover:translate-x-0.5 hover:translate-y-0.5
-            transition-all duration-200 text-white font-bold cursor-pointer text-sm sm:text-base"
-          >
-            Curriculum
-          </button>
+        <a
+          href="/Roberto-Romero.pdf"
+          download
+          class="bg-[#2563EB] w-40 sm:w-44 md:w-48 lg:w-52 h-10 sm:h-11 rounded-4xl shadow-[3px_3px_0_#1E40AF]
+          hover:bg-[#1D4ED8] hover:scale-105 hover:shadow-[1px_1px_0_#1E40AF]
+          hover:translate-x-0.5 hover:translate-y-0.5
+          transition-all duration-200 text-white font-bold cursor-pointer text-sm sm:text-base
+          flex items-center justify-center"
+          aria-label="Descargar currículum en formato PDF"
+        >
+           Curriculum 
         </a>
       </aside>
     </section>
 
     <!-- Sección de SocialFav - centrada en móvil -->
-    <section class="w-full">
+    <section class="w-full" aria-label="Enlaces a redes sociales">
       <div class="social-container w-full flex justify-center items-center">
         <div class="w-full max-w-md mx-auto">
           <SocialFav />
@@ -64,26 +66,14 @@ import SobreMi from "./sobreMi/sobreMi.astro";
       </div>
     </section>
 
-    <!-- Sección de Swiper (comentada) -->
-    <!-- <section class="w-full">
-      <div class="swiper-container w-full">
-        <Swiper />
-      </div>
-    </section> -->
-
-    
-    
-    <!-- Sección MyPerfil - centrada y responsiva -->
-    <section class="w-full"></section>
     <section id="Sobre-mi">
       <SobreMi />
     </section>
     
-    <section class="w-full"></section>
-   <section id="Proyectos">
-     <Proyectos />
-   </section>
-    <!-- Footer -->
+    <section id="Proyectos">
+      <Proyectos />
+    </section>
+
     <footer class="h-auto md:h-36 w-full">
       <FooterMain />
     </footer>
@@ -108,100 +98,31 @@ import SobreMi from "./sobreMi/sobreMi.astro";
   }
 
   @keyframes typewriter {
-    0% {
-      width: 0;
-    }
-    20% {
-      width: 100%;
-    }
-    50% {
-      width: 100%;
-    }
-    70% {
-      width: 0;
-    }
-    100% {
-      width: 0;
-    }
+    0%, 10% { width: 0; }
+    30%, 70% { width: 100%; }
+    90%, 100% { width: 0; }
   }
 
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #3b82f6;
-    }
-  }
-
-  /* Contenedores centrados */
-  .social-container,
-  .myperfil-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Ajustes responsivos para el typewriter */
+  /* ✅ CORREGIDO: Móvil - desactiva la animación para mejor UX */
   @media (max-width: 640px) {
     .typewriter-text {
       white-space: normal;
-      word-break: keep-all;
-      animation: typewriter-mobile 8s steps(20, end) infinite;
-      font-size: 1rem;
-    }
-
-    @keyframes typewriter-mobile {
-      0% {
-        width: 0;
-      }
-      20% {
-        width: 100%;
-      }
-      50% {
-        width: 100%;
-      }
-      70% {
-        width: 0;
-      }
-      100% {
-        width: 0;
-      }
+      border-right: none;
+      animation: none;
+      width: 100%;
     }
   }
 
-  /* Tablet adjustments */
+  /* Tablet - mantiene animación pero ajustada */
   @media (min-width: 641px) and (max-width: 1024px) {
     .typewriter-text {
       animation: typewriter-tablet 10s steps(25, end) infinite;
     }
 
     @keyframes typewriter-tablet {
-      0% {
-        width: 0;
-      }
-      20% {
-        width: 100%;
-      }
-      50% {
-        width: 100%;
-      }
-      70% {
-        width: 0;
-      }
-      100% {
-        width: 0;
-      }
-    }
-  }
-
-  /* Ajustes específicos para MyPerfil en móvil */
-  @media (max-width: 768px) {
-    .myperfil-container > div {
-      width: 100%;
-      padding: 0 1rem;
+      0%, 10% { width: 0; }
+      30%, 70% { width: 100%; }
+      90%, 100% { width: 0; }
     }
   }
 
@@ -209,12 +130,6 @@ import SobreMi from "./sobreMi/sobreMi.astro";
   @media (max-width: 480px) {
     .typewriter-text {
       font-size: 0.875rem;
-      white-space: normal;
-      word-break: keep-all;
-    }
-
-    h1 {
-      font-size: 1.75rem;
     }
   }
 </style>
