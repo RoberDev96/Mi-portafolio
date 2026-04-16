@@ -10,7 +10,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site:'https://robertdev96.vercel.app/',
+  site:'https://robertdev96.vercel.app',
 
   vite: {
 plugins: [tailwindcss()],
