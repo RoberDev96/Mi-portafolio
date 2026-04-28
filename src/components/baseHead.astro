@@ -5,30 +5,108 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  keywords?: string;
+  author?: string;
+  type?: string;
 }
-const { title, description, image = '/imagen/perfil.jpg' } = Astro.props;
+const { 
+  title, 
+  description, 
+  image = '/imagen/perfil.jpg',
+  keywords = 'desarrollador frontend, portafolio, programación, web developer',
+  author = 'Roberto Romero',
+  type = 'website'
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.url);
 ---
 
- <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content={author} />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#030712" />
+<meta name="color-scheme" content="dark" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
 
-    <meta name="description" content={description} />
-    <title>{title}</title>
+<!-- Icons -->
+<link rel="icon" type="image/png" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="manifest" href="/manifest.json" />
+
+<!-- Language Alternatives -->
+<link rel="alternate" hrefLang="es" href={canonicalURL} />
+<link rel="alternate" hrefLang="x-default" href={canonicalURL} />
+
+<!-- Preconnect and DNS Prefetch -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${Astro.site}#person`,
+      "name": "Roberto Romero",
+      "url": Astro.site,
+      "sameAs": [
+        "https://github.com",
+        "https://linkedin.com",
+        "https://twitter.com"
+      ],
+      "jobTitle": "Desarrollador Frontend",
+      "image": imageURL.toString()
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${Astro.site}#website`,
+      "url": Astro.site,
+      "name": "Roberto Romero - Portafolio",
+      "description": description,
+      "inLanguage": "es-ES",
+      "creator": {
+        "@id": `${Astro.site}#person`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${Astro.url}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": Astro.site
+        }
+      ]
+    }
+  ]
+})} />
+
+<title>{title}</title>

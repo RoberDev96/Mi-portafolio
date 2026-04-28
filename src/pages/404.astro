@@ -1,9 +1,12 @@
 ---
 import '../../public/Style/404.css'
 import Layout from '../layout/Layout.astro'
+import { PAGES_SEO } from '../config/seo';
+
+const { title, description } = PAGES_SEO.notFound;
 ---
 
-<Layout>
+<Layout title={title} description={description}>
 
     
     

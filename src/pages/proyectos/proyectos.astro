@@ -5,6 +5,9 @@ import pomodoroImg from '../../../public/imagen/pomodoroImg.webp'
 import weatherImg from '../../../public/imagen/weatherImg.webp'
 import ageCalculateImg from '../../../public/imagen/ageCalculateImg.webp'
 import { Icon } from "astro-icon/components";
+import { PAGES_SEO } from "../../config/seo";
+
+const { title, description, keywords, image } = PAGES_SEO.proyectos;
 
 const proyectos = [
   {
@@ -44,7 +47,7 @@ const proyectos = [
 ];
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords} image={image}>
   <section class="main mt-10 md:mt-20 flex flex-col w-full items-center px-4 md:px-6 lg:px-8">
     <MainStyle text={"Proyectos"} />
     

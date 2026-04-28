@@ -1,0 +1,29 @@
+# Robots.txt for Roberto's Portfolio
+User-agent: *
+Allow: /
+Allow: /proyectos/
+Allow: /sobreMi/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /private/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://robertdev96.vercel.app/sitemap.xml
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Disallow: /

@@ -5,9 +5,12 @@ import SocialFav from "../components/shared/socialFav.astro";
 import Layout from "../layout/Layout.astro";
 import Proyectos from "./proyectos/proyectos.astro";
 import SobreMi from "./sobreMi/sobreMi.astro";
+import { PAGES_SEO } from "../config/seo";
+
+const { title, description, keywords, image } = PAGES_SEO.home;
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords} image={image}>
   <div
     class="flex flex-col mt-20 md:mt-32 lg:mt-44 gap-6 md:gap-8 lg:gap-10 items-center w-full px-4 md:px-6 lg:px-8"
   >
