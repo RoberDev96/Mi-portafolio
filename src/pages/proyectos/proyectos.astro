@@ -4,8 +4,10 @@ import Layout from "../../layout/Layout.astro";
 import pomodoroImg from '../../../public/imagen/pomodoroImg.webp'
 import weatherImg from '../../../public/imagen/weatherImg.webp'
 import ageCalculateImg from '../../../public/imagen/ageCalculateImg.webp'
+import ecommerceImg from '../../../public/imagen/ecommerceImg.webp'
 import { Icon } from "astro-icon/components";
 import { PAGES_SEO } from "../../config/seo";
+
 
 const { title, description, keywords, image } = PAGES_SEO.proyectos;
 
@@ -43,7 +45,18 @@ const proyectos = [
     "Cálculo exacto de edad",
     "Validación de fechas",
     ]
-  },
+  },{
+   "titulo": "E-Commerce",
+    "descripcion": "Plataforma de comercio electrónico con catálogo de productos, carrito de compras y sistema de filtros. Interfaz responsive y experiencia de usuario optimizada.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "React"],
+    "imagen": ecommerceImg,
+    "github": "https://github.com/RoberDev96/E-Commerce",
+    "demo": "https://e-commerce-xi-tawny-82.vercel.app/",
+    "features": [
+        "Catálogo de productos dinámico",
+        "Carrito de compras interactivo",
+    ]
+  }
 ];
 ---
 
