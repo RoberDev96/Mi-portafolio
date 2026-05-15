@@ -2,9 +2,8 @@
 import Layout from "../../layout/Layout.astro";
 import Tarject from "../../components/servicios/tarject.astro";
 import { Icon } from "astro-icon/components";
-import FooterMain from "../../components/shared/footerMain.astro";
 import MainStyle from "../../components/mainStyle.astro";
-import '../../../public/Style/sobreMi.css'
+import "../../../public/Style/sobreMi.css";
 import { PAGES_SEO } from "../../config/seo";
 
 const { title, description, keywords, image } = PAGES_SEO.sobreMi;
@@ -26,6 +25,7 @@ const tecnologic = [
   { name: "gitHub", size: 50, texto: "GitHub" },
   { name: "redux", size: 50, texto: "Redux" },
   { name: "zustand", size: 50, texto: "Zustand" },
+  { name: "nextjs", size: 50, texto: "NextJs" },
 ];
 
 const experiencias = [
@@ -35,7 +35,7 @@ const experiencias = [
     empresa: "Universidad de Matanzas - Departamento de Administración de Red",
     descripcion: `Desarrollo y mantenimiento de aplicaciones internas para la gestión universitaria.
     Implementación de nuevas funcionalidades y optimización de sistemas existentes.`,
-    tecnologias: ["Astro", "React", "Tailwind", "TypeScript"]
+    tecnologias: ["Astro", "React", "Tailwind", "TypeScript"],
   },
   {
     fecha: "2020 - 2022",
@@ -44,44 +44,68 @@ const experiencias = [
     descripcion: `-Diseñar, implementar y mantener las funcionalidades del software. Participar
 en el ciclo completo de desarrollo: desde la especificación hasta la
 codificación, pruebas y producción.`,
-    tecnologias: ["JavaScript", "HTML/CSS", "Vue"]
+    tecnologias: ["JavaScript", "HTML/CSS", "Vue"],
   },
- ];
+];
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
-  <section class="main mt-10 md:mt-20 flex flex-col w-full items-center px-4 md:px-6 lg:px-8">
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <section
+    class="main mt-10 md:mt-20 flex flex-col w-full items-center px-4 md:px-6 lg:px-8"
+  >
     <MainStyle text={"Sobre Mi"} />
-    
+
     <main class="w-full max-w-7xl mx-auto">
       <!-- Sección de perfil - Responsive -->
-      <div class="flex flex-col lg:flex-row justify-between gap-6 lg:gap-20 w-full">
+      <div
+        class="flex flex-col lg:flex-row justify-between gap-6 lg:gap-20 w-full"
+      >
         <!-- Imagen de perfil -->
-        <div class="w-full lg:w-96 h-80 lg:h-auto bg-cover bg-center bg-no-repeat rounded-4xl overflow-hidden shadow-[3px_3px_0_#1E40AF]"
-          style={`background-image: url('/imagen/perfil.jpg')`}>
+        <div
+          class="w-full lg:w-96 h-80 lg:h-auto bg-cover bg-center bg-no-repeat rounded-4xl overflow-hidden shadow-[3px_3px_0_#1E40AF]"
+          style={`background-image: url('/imagen/perfil.jpg')`}
+        >
         </div>
-        
+
         <!-- Texto de presentación -->
         <div class="w-full lg:flex-1 flex flex-col gap-4">
-          <h1 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-2xl sm:text-3xl md:text-4xl font-bold">
+          <h1
+            class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-2xl sm:text-3xl md:text-4xl font-bold"
+          >
             Mi nombre es Roberto
           </h1>
           <p class="text-white text-sm sm:text-base leading-relaxed">
-            Soy un desarrollador de software con un enfoque en el <span class="text-[#3b82f6]">
+            Soy un desarrollador de software con un enfoque en el <span
+              class="text-[#3b82f6]"
+            >
               desarrollo front-end
-            </span> y la <span class="text-[#3b82f6]">experiencia del usuario</span>, 
-            integrando interfaces, lógica de negocio y APIs según las necesidades de cada proyecto. 
-            Trabajo con tecnologías como React, Node.js, Astro, JavaScript, TypeScript, Tailwind CSS 
-            y herramientas de diseño como Figma, entre otras. Mi interés por la <span class="text-[#3b82f6]">tecnología</span>
-            surgió desde muy pequeño. En la clase de informática tuve mi primer contacto con la 
-            <span class="text-[#3b82f6]">programación</span> y, movido por la curiosidad, continué 
-            aprendiendo por mi cuenta hasta descubrir que esto era lo que quería hacer 
+            </span> y la <span class="text-[#3b82f6]"
+              >experiencia del usuario</span
+            >, integrando interfaces, lógica de negocio y APIs según las
+            necesidades de cada proyecto. Trabajo con tecnologías como React,
+            Node.js, Astro, JavaScript, TypeScript, Tailwind CSS y herramientas
+            de diseño como Figma, entre otras. Mi interés por la <span
+              class="text-[#3b82f6]">tecnología</span
+            >
+            surgió desde muy pequeño. En la clase de informática tuve mi primer contacto
+            con la
+            <span class="text-[#3b82f6]">programación</span> y, movido por la curiosidad,
+            continué aprendiendo por mi cuenta hasta descubrir que esto era lo que
+            quería hacer
             <span class="text-[#3b82f6]">profesionalmente.</span>
-            Hoy mantengo ese mismo <span class="text-[#3b82f6]">impulso:</span> siempre estoy 
-            <span class="text-[#3b82f6]">comprometido con mejorar</span> mis habilidades, adaptarme 
-            a los nuevos avances tecnológicos y crecer tanto a nivel profesional como personal. 
-            Me motiva crear <span class="text-[#3b82f6]">soluciones</span> funcionales, visuales y 
-            bien pensadas que generen una experiencia real para los <span class="text-[#3b82f6]">usuarios.</span>
+            Hoy mantengo ese mismo <span class="text-[#3b82f6]">impulso:</span> siempre
+            estoy
+            <span class="text-[#3b82f6]">comprometido con mejorar</span> mis habilidades,
+            adaptarme a los nuevos avances tecnológicos y crecer tanto a nivel profesional
+            como personal. Me motiva crear <span class="text-[#3b82f6]"
+              >soluciones</span
+            > funcionales, visuales y bien pensadas que generen una experiencia real
+            para los <span class="text-[#3b82f6]">usuarios.</span>
           </p>
         </div>
       </div>
@@ -90,84 +114,126 @@ codificación, pruebas y producción.`,
       <section class="mt-10 md:mt-15">
         <div class="w-full flex flex-col gap-6 md:gap-10">
           <!-- Título de Servicios -->
-          <div class="flex flex-col-reverse md:flex-row justify-around w-full items-center gap-4 md:gap-0">
-            <div class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+          <div
+            class="flex flex-col-reverse md:flex-row justify-around w-full items-center gap-4 md:gap-0"
+          >
+            <div
+              class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+            >
             </div>
-            <h2 class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl">
+            <h2
+              class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl"
+            >
               Servicios
             </h2>
-            <div class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+            <div
+              class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+            >
             </div>
           </div>
-          
+
           <!-- Tarjetas de servicios -->
-          <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-10 lg:gap-20">
+          <div
+            class="flex flex-col md:flex-row justify-center gap-6 md:gap-10 lg:gap-20"
+          >
             <Tarject name={"Frontend"} text={textFront} icon={"frontend"} />
-            <Tarject name={"Desarrollo Web Responsivo"} text={textDesarrollo} icon={"responsive"} />
+            <Tarject
+              name={"Desarrollo Web Responsivo"}
+              text={textDesarrollo}
+              icon={"responsive"}
+            />
           </div>
         </div>
       </section>
 
-     <!-- Sección de Experiencia -->
-<section class="mt-20 md:mt-28">
-  <div class="w-full flex flex-col gap-6 md:gap-10">
-    <!-- Título de Experiencia -->
-    <div class="flex flex-col-reverse md:flex-row justify-around w-full items-center gap-4 md:gap-0">
-      <div class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
-      </div>
-      <h2 class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl">
-        Experiencia
-      </h2>
-      <div class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
-      </div>
-    </div>
-    
-    <!-- Grid de experiencias -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-10">
-      {experiencias.map((exp) => (
-        <div class="bg-linear-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-2xl border border-[#3b82f6]/20 hover:border-[#3b82f6]/50 transition-all hover:scale-[1.02]">
-          <div class="flex items-start justify-between">
-            <div>
-              <p class="text-[#3b82f6] text-sm font-mono">{exp.fecha}</p>
-              <h3 class="text-white text-xl font-bold mt-1">{exp.cargo}</h3>
-              <p class="text-gray-400 text-md">{exp.empresa}</p>
+      <!-- Sección de Experiencia -->
+      <section class="mt-20 md:mt-28">
+        <div class="w-full flex flex-col gap-6 md:gap-10">
+          <!-- Título de Experiencia -->
+          <div
+            class="flex flex-col-reverse md:flex-row justify-around w-full items-center gap-4 md:gap-0"
+          >
+            <div
+              class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+            >
             </div>
-            <Icon name="astro" size={32} class="text-[#3b82f6]/50" />
+            <h2
+              class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl"
+            >
+              Experiencia
+            </h2>
+            <div
+              class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+            >
+            </div>
           </div>
-          <p class="text-gray-300 mt-4">{exp.descripcion}</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            {exp.tecnologias.map(tech => (
-              <span class="text-xs bg-[#3b82f6]/20 text-[#3b82f6] px-2 py-1 rounded-full">
-                {tech}
-              </span>
-            ))}
+
+          <!-- Grid de experiencias -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-10">
+            {
+              experiencias.map((exp) => (
+                <div class="bg-linear-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-2xl border border-[#3b82f6]/20 hover:border-[#3b82f6]/50 transition-all hover:scale-[1.02]">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <p class="text-[#3b82f6] text-sm font-mono">
+                        {exp.fecha}
+                      </p>
+                      <h3 class="text-white text-xl font-bold mt-1">
+                        {exp.cargo}
+                      </h3>
+                      <p class="text-gray-400 text-md">{exp.empresa}</p>
+                    </div>
+                    <Icon name="astro" size={32} class="text-[#3b82f6]/50" />
+                  </div>
+                  <p class="text-gray-300 mt-4">{exp.descripcion}</p>
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    {exp.tecnologias.map((tech) => (
+                      <span class="text-xs bg-[#3b82f6]/20 text-[#3b82f6] px-2 py-1 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- Sección de Tecnologías -->
       <section class="mt-10 md:mt-15">
-        <div class="flex flex-col md:flex-row justify-around w-full items-center gap-4 md:gap-0">
-          <div class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div
+          class="flex flex-col md:flex-row justify-around w-full items-center gap-4 md:gap-0"
+        >
+          <div
+            class="h-1.5 w-full md:w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+          >
           </div>
-          <h2 class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl order-first md:order-0">
+          <h2
+            class="text-[#F9FAFB] font-bold [text-shadow:0_4px_6px_#3B82F6] text-3xl sm:text-4xl order-first md:order-0"
+          >
             Tecnologías
           </h2>
-          <div class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+          <div
+            class="hidden md:block h-1.5 w-[80%] border-b-8 border-[#3b82f6] rounded-2xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]"
+          >
           </div>
         </div>
-        
+
         <!-- Grid de tecnologías responsivo -->
         <div class="w-full py-6 md:py-8">
-          <div class="tarject grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+          <div
+            class="tarject grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8"
+          >
             {
               tecnologic.map((item) => (
                 <div class="flex justify-center">
                   <div class="flex flex-col items-center gap-3 md:gap-4 p-4 md:p-6 w-full max-w-50 md:w-52 lg:w-62.5 h-auto min-h-35 md:h-37.5 bg-[#111828] rounded-4xl shadow-[3px_3px_0_#1E40AF] transition-transform hover:scale-105">
-                    <Icon name={item.name} size={item.size} class="text-blue-500" />
+                    <Icon
+                      name={item.name}
+                      size={item.size}
+                      class="text-blue-500"
+                    />
                     <h3 class="text-white text-xs md:text-sm font-semibold whitespace-nowrap">
                       {item.texto}
                     </h3>
@@ -181,28 +247,38 @@ codificación, pruebas y producción.`,
 
       <!-- Sección de GitHub -->
       <section class="mt-10 md:mt-15 mb-10">
-        <div class="w-full h-auto flex flex-col lg:flex-row justify-around gap-6 p-6 md:p-8 bg-[#1B1560] rounded-4xl shadow-[3px_3px_0_#1E40AF]">
+        <div
+          class="w-full h-auto flex flex-col lg:flex-row justify-around gap-6 p-6 md:p-8 bg-[#1B1560] rounded-4xl shadow-[3px_3px_0_#1E40AF]"
+        >
           <div class="w-full lg:w-[60%] flex flex-col gap-4 md:gap-6">
-            <h2 class="text-white font-bold text-2xl sm:text-3xl">¡Visita mi GitHub!</h2>
+            <h2 class="text-white font-bold text-2xl sm:text-3xl">
+              ¡Visita mi GitHub!
+            </h2>
             <p class="text-white text-base sm:text-xl">
               Hola! te invito a mi perfil de GitHub para que puedas explorar mis
               proyectos y contribuciones
             </p>
             <a href="https://github.com/RoberDev96" class="inline-block">
-              <button class="font-bold border rounded-3xl h-11 w-28 bg-amber-50 cursor-pointer hover:scale-105 transition-transform">
+              <button
+                class="font-bold border rounded-3xl h-11 w-28 cursor-pointer hover:scale-105 transition-transform"
+              >
                 Ir a GitHub
               </button>
             </a>
           </div>
-          <div class="w-full lg:w-[35%] h-48 md:h-64 overflow-hidden rounded-lg">
+          <div
+            class="w-full lg:w-[35%] h-48 md:h-64 overflow-hidden rounded-lg"
+          >
             <a href="https://github.com/RoberDev96" class="block h-full">
-              <img src="/imagen/github.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="mi-Github" />
+              <img
+                src="/imagen/github.png"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                alt="mi-Github"
+              />
             </a>
           </div>
         </div>
       </section>
     </main>
-    
   </section>
 </Layout>
-

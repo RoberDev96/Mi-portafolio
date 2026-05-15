@@ -23,7 +23,7 @@
     </div>
   </div>
 </section>
-<div class="flex justify-between align-middle w-full p-5">
+<div class="flex flex-col gap-5 md:flex-row md:justify-between md:items-start w-full p-5">
   <div>
     <p class="text-white">
       Designed by <span class="border-b font-bold border-b-white"
@@ -37,5 +37,32 @@
     <h3 class="text-white">
       © 2026 Roberto Romero Díaz. Todos los derechos reservados.
     </h3>
+    <p class="footer-signature mt-2 flex items-center gap-2 text-sm text-gray-400 md:justify-end">
+      <span aria-hidden="true">🖥️</span>
+      <span>Construido con Astro • Tailwind • Código abierto</span>
+    </p>
   </div>
 </div>
+
+<style>
+  @keyframes subtlePulse {
+    0%,
+    100% {
+      color: rgb(156 163 175);
+    }
+
+    50% {
+      color: rgb(209 213 219);
+    }
+  }
+
+  .footer-signature {
+    animation: subtlePulse 3s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer-signature {
+      animation: none;
+    }
+  }
+</style>

@@ -6,11 +6,17 @@ import Layout from "../layout/Layout.astro";
 import Proyectos from "./proyectos/proyectos.astro";
 import SobreMi from "./sobreMi/sobreMi.astro";
 import { PAGES_SEO } from "../config/seo";
+import Swiper from "../components/shared/swiper.astro";
 
 const { title, description, keywords, image } = PAGES_SEO.home;
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
   <div
     class="flex flex-col mt-20 md:mt-32 lg:mt-44 gap-6 md:gap-8 lg:gap-10 items-center w-full px-4 md:px-6 lg:px-8"
   >
@@ -55,7 +61,7 @@ const { title, description, keywords, image } = PAGES_SEO.home;
           flex items-center justify-center"
           aria-label="Descargar currículum en formato PDF"
         >
-           Curriculum 
+          Curriculum
         </a>
       </aside>
     </section>
@@ -68,11 +74,14 @@ const { title, description, keywords, image } = PAGES_SEO.home;
         </div>
       </div>
     </section>
+    <section>
+      <Swiper/>
+    </section>
 
     <section id="Sobre-mi">
       <SobreMi />
     </section>
-    
+
     <section id="Proyectos">
       <Proyectos />
     </section>
@@ -101,9 +110,18 @@ const { title, description, keywords, image } = PAGES_SEO.home;
   }
 
   @keyframes typewriter {
-    0%, 10% { width: 0; }
-    30%, 70% { width: 100%; }
-    90%, 100% { width: 0; }
+    0%,
+    10% {
+      width: 0;
+    }
+    30%,
+    70% {
+      width: 100%;
+    }
+    90%,
+    100% {
+      width: 0;
+    }
   }
 
   /* ✅ CORREGIDO: Móvil - desactiva la animación para mejor UX */
@@ -123,9 +141,18 @@ const { title, description, keywords, image } = PAGES_SEO.home;
     }
 
     @keyframes typewriter-tablet {
-      0%, 10% { width: 0; }
-      30%, 70% { width: 100%; }
-      90%, 100% { width: 0; }
+      0%,
+      10% {
+        width: 0;
+      }
+      30%,
+      70% {
+        width: 100%;
+      }
+      90%,
+      100% {
+        width: 0;
+      }
     }
   }
 

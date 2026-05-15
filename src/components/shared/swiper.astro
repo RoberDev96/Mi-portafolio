@@ -13,13 +13,14 @@ const tecnologic = [
   { name: "gitHub", size: 30, texto: "GitHub" },
   { name: "redux", size: 30, texto: "Redux" },
   { name: "zustand", size: 30, texto: "Zustand" },
+  { name: "nextjs", size: 30, texto: "NextJs" },
+
 ];
 
-// ✅ Cambiado: 2 copias para que funcione con -50%
-const slides = [...tecnologic, ...tecnologic, ...tecnologic ];
+const slides = [...tecnologic, ...tecnologic, ...tecnologic];
 ---
 
-<div class="w-full overflow-hidden py-8">
+<div class="w-full overflow-hidden py-8 relative">
   <div class="flex gap-6 animate-scroll" style="width: fit-content;">
     {slides.map((item) => (
       <div class="flex-none">
@@ -37,20 +38,27 @@ const slides = [...tecnologic, ...tecnologic, ...tecnologic ];
 </div>
 
 <style>
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+    will-change: transform;
+    display: flex;
+    animation-timing-function: linear;
+  }
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-50% - 2.25rem));
     }
   }
-
-  .animate-scroll {
-    animation: scroll 40s linear infinite;
-  }
   
-
   html {
     overflow-x: hidden;
     width: 100%;
