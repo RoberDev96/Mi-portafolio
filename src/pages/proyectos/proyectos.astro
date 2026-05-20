@@ -1,13 +1,13 @@
 ---
 import MainStyle from "../../components/mainStyle.astro";
 import Layout from "../../layout/Layout.astro";
-import pomodoroImg from '../../../public/imagen/pomodoroImg.webp'
-import weatherImg from '../../../public/imagen/weatherImg.webp'
-import ageCalculateImg from '../../../public/imagen/ageCalculateImg.webp'
-import ecommerceImg from '../../../public/imagen/ecommerceImg.webp'
+import pomodoroImg from "../../../public/imagen/pomodoroImg.webp";
+import weatherImg from "../../../public/imagen/weatherImg.webp";
+import ageCalculateImg from "../../../public/imagen/ageCalculateImg.webp";
+import ecommerceImg from "../../../public/imagen/ecommerceImg.webp";
+import shearchMovie from "../../../public/imagen/shearchMovie.webp"
 import { Icon } from "astro-icon/components";
 import { PAGES_SEO } from "../../config/seo";
-
 
 const { title, description, keywords, image } = PAGES_SEO.proyectos;
 const fechaActualizacion = new Date().toLocaleDateString("es-ES");
@@ -15,134 +15,169 @@ const fechaActualizacion = new Date().toLocaleDateString("es-ES");
 const proyectos = [
   {
     titulo: "Pomodoro Timer",
-    descripcion: "Aplicación de técnica Pomodoro para mejorar la productividad y gestión del tiempo.",
+    descripcion:
+      "Aplicación de técnica Pomodoro para mejorar la productividad y gestión del tiempo.",
     tecnologias: ["React", "Tailwind", "TypeScript"],
     imagen: pomodoroImg,
     github: "https://github.com/RoberDev96/pomodoro",
     demo: "https://roberdev96.github.io/Pomodoro/",
-    features: ["Timer interactivo"]
+    features: ["Timer interactivo"],
   },
-   {
+  {
     titulo: "Weather-app",
     descripcion: `Una aplicación del clima moderna e interactiva. Utilizando Weather API. Permite a los usuarios buscar el clima actual de cualquier ciudad del mundo.`,
     tecnologias: ["React", "Tailwind", "TypeScript", "API REST"],
     imagen: weatherImg,
     github: "https://github.com/RoberDev96/Weather-app",
     demo: "https://roberdev96.github.io/Weather-app/",
-     features: [
-    "Clima en tiempo real",
-    "Búsqueda por ciudad",
-    "Iconos dinámicos según el clima",
-  ]
+    features: [
+      "Clima en tiempo real",
+      "Búsqueda por ciudad",
+      "Iconos dinámicos según el clima",
+    ],
   },
   {
     titulo: "Age Calculate",
     descripcion: `Calculadora de edad precisa que determina años, meses y días vividos desde una fecha de nacimiento específica. Interfaz simple e intuitiva.`,
-    tecnologias: [ 'HTML', 'CSS', 'JavaScript'],
+    tecnologias: ["HTML", "CSS", "JavaScript"],
     imagen: ageCalculateImg,
     github: "https://github.com/RoberDev96/Weather-app",
     demo: "https://roberdev96.github.io/Calculate-age/",
-      features: [
-    "Cálculo exacto de edad",
-    "Validación de fechas",
-    ]
-  },{
-   "titulo": "E-Commerce",
-    "descripcion": "Plataforma de comercio electrónico con catálogo de productos, carrito de compras y sistema de filtros. Interfaz responsive y experiencia de usuario optimizada.",
-    "tecnologias": ["HTML", "CSS", "JavaScript", "React"],
-    "imagen": ecommerceImg,
-    "github": "https://github.com/RoberDev96/E-Commerce",
-    "demo": "https://e-commerce-xi-tawny-82.vercel.app/",
-    "features": [
-        "Catálogo de productos dinámico",
-        "Carrito de compras interactivo",
-    ]
-  }
+    features: ["Cálculo exacto de edad", "Validación de fechas"],
+  },
+  {
+    titulo: "E-Commerce",
+    descripcion:
+      "Plataforma de comercio electrónico con catálogo de productos, carrito de compras y sistema de filtros. Interfaz responsive y experiencia de usuario optimizada.",
+    tecnologias: ["HTML", "CSS", "JavaScript", "React"],
+    imagen: ecommerceImg,
+    github: "https://github.com/RoberDev96/E-Commerce",
+    demo: "https://e-commerce-xi-tawny-82.vercel.app/",
+    features: [
+      "Catálogo de productos dinámico",
+      "Carrito de compras interactivo",
+    ],
+  },
+  {
+    titulo: "Movie Search App",
+    descripcion:
+      "Buscador de películas que consume la API de OMDB. Permite buscar por título, ver detalles completos, paginación en URL y explorar películas populares.",
+    tecnologias: [
+      "React",
+      "TypeScript",
+      "TanStack Query", 
+      "React Router",
+    ],
+    imagen: shearchMovie,
+    github: "https://github.com/RoberDev96/imdbMovies",
+    demo: "https://imdb-movies-teal.vercel.app/",
+    features: [
+      "Búsqueda en tiempo real por título",
+      "Paginación con URL como fuente de la verdad",
+      "Detalles completos de película",
+      "Pósters reales desde OMDB",
+    ],
+  },
 ];
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
-  <section class="main mt-10 md:mt-20 flex flex-col w-full items-center px-4 md:px-6 lg:px-8">
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <section
+    class="main mt-10 md:mt-20 flex flex-col w-full items-center px-4 md:px-6 lg:px-8"
+  >
     <MainStyle text={"Proyectos"} />
-    
+
     <main class="w-full max-w-7xl mx-auto mt-8 md:mt-12">
       <p class="text-xs text-gray-500 text-right mb-2 px-4 md:px-0">
-        {proyectos.length} proyectos • Última actualización: {fechaActualizacion}
+        {proyectos.length} proyectos • Última actualización: {
+          fechaActualizacion
+        }
       </p>
 
-      <div class="grid p-4 ml-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {proyectos.map((proyecto) => (
-          <div class="project-card relative bg-[#111828] rounded-2xl overflow-hidden shadow-[3px_3px_0_#1E40AF] hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-            <div class="relative left-2 top-1.5 group overflow-hidden h-48 w-[95%] md:h-56">
-              <img 
-                src={proyecto.imagen.src} 
-                alt={proyecto.titulo}
-                class="w-full h-full transition-transform duration-500 hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-[#3B82F6]/0 group-hover:bg-[#3B82F6]/20 transition-all duration-300"></div>
-            </div>
-            
-            {/* Contenido */}
-            <div class="p-5 md:p-6">
-              <h3 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-xl md:text-2xl font-bold mb-2">
-                {proyecto.titulo}
-              </h3>
-              
-              <p class="text-gray-300 text-sm md:text-base mb-4">
-                {proyecto.descripcion}
-              </p>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                {proyecto.tecnologias.map((tech) => (
-                  <span class="text-xs bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-1 rounded-full">
-                    {tech}
-                  </span>
-                ))}
+      <div
+        class="grid p-4 ml-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+      >
+        {
+          proyectos.map((proyecto) => (
+            <div class="project-card relative flex flex-col bg-[#111828] rounded-2xl overflow-hidden shadow-[3px_3px_0_#1E40AF] hover:shadow-xl transition-all duration-300 hover:scale-[1.02] h-full">
+              <div class="relative left-2 top-1.5 group overflow-hidden h-48 w-[95%] md:h-56 shrink-0">
+                <img
+                  src={proyecto.imagen.src}
+                  alt={proyecto.titulo}
+                  class="w-full h-full transition-transform duration-500 hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-[#3B82F6]/0 group-hover:bg-[#3B82F6]/20 transition-all duration-300" />
               </div>
-              
-              {proyecto.features && (
-                <div class="mb-4">
-                  <p class="text-gray-400 text-xl mb-2">Características:</p>
-                  <ul class="text-gray-300 text-xs space-y-1">
-                    {proyecto.features.map((feature) => (
-                      <li class="flex items-center gap-1">
-                        <span class="text-[#3B82F6]">•</span> {feature}
-                      </li>
-                    ))}
-                  </ul>
+
+              {/* Contenido */}
+              <div class="p-5 md:p-6 flex flex-col flex-grow">
+                <h3 class="text-[#F9FAFB] [text-shadow:0_4px_6px_#3B82F6] text-xl md:text-2xl font-bold mb-2">
+                  {proyecto.titulo}
+                </h3>
+
+                <p class="text-gray-300 text-sm md:text-base mb-4">
+                  {proyecto.descripcion}
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {proyecto.tecnologias.map((tech) => (
+                    <span class="text-xs bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-1 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              )}
-              
-              <div class="flex gap-3 mt-4">
-                <a 
-                  href={proyecto.github} 
-                  target="_blank"
-                  class="flex items-center gap-2 bg-[#1e293b] hover:bg-[#3B82F6] text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm"
-                >
-                  <Icon name="gitHub" size={18} />
-                  Código
-                </a>
-                {proyecto.demo && (
-                  <a 
-                    href={proyecto.demo} 
-                    target="_blank"
-                    class="flex items-center gap-2 bg-[#2563EB] hover:bg-[#2563EB] text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm"
-                  >
-                    <Icon name="demo" size={20} class='' />
-                    Demo
-                  </a>
+
+                {proyecto.features && (
+                  <div class="mb-4">
+                    <p class="text-gray-400 text-sm mb-2">Características:</p>
+                    <ul class="text-gray-300 text-xs space-y-1">
+                      {proyecto.features.map((feature) => (
+                        <li class="flex items-center gap-1">
+                          <span class="text-[#3B82F6]">•</span> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
+
+                <div class="flex gap-3 mt-auto">
+                  <a
+                    href={proyecto.github}
+                    target="_blank"
+                    class="flex items-center gap-2 bg-[#1e293b] hover:bg-[#3B82F6] text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm"
+                  >
+                    <Icon name="gitHub" size={18} />
+                    Código
+                  </a>
+                  {proyecto.demo && (
+                    <a
+                      href={proyecto.demo}
+                      target="_blank"
+                      class="flex items-center gap-2 bg-[#2563EB] hover:bg-[#2563EB] text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm"
+                    >
+                      <Icon name="demo" size={20} class="" />
+                      Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
-      
-      {proyectos.length === 0 && (
-        <div class="text-center py-20">
-          <p class="text-gray-400 text-lg">Próximamente más proyectos...</p>
-        </div>
-      )}
+
+      {
+        proyectos.length === 0 && (
+          <div class="text-center py-20">
+            <p class="text-gray-400 text-lg">Próximamente más proyectos...</p>
+          </div>
+        )
+      }
     </main>
   </section>
 </Layout>
